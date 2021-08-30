@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ name }}</title>
+		<base href="/">
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+	</head>
+	<body>
+
+		{% include "layout/app-sidebar.njk" %}
+
+		<div class="wrapper">
+			<div class="constructor">
+				{% block main %}
+					This is the default content
+				{% endblock %}
+			</div>
+		</div>
+
+		<script src="{{ siteUrl }}/assets/js/main.js"></script>
+	</body>
+</html>

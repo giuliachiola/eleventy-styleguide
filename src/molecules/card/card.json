@@ -1,0 +1,6 @@
+{
+	"layout": "layout/component.njk",
+	"permalink": "components/card/{{ name | slug }}/",
+	"componentFile": "components/molecules/card/card.njk",
+	"componentName": "card"
+}

@@ -1,0 +1,72 @@
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-default open" role="navigation">
+    <!-- Sidebar header -->
+    <div class="sidebar-header header-cover" style="background-image: url(https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
+        <!-- Top bar -->
+        <div class="top-bar"></div>
+        <!-- Sidebar toggle button -->
+        <button type="button" class="sidebar-toggle">
+            <i class="icon-material-sidebar-arrow"></i>
+        </button>
+        <!-- Sidebar brand image -->
+        <div class="sidebar-image">
+            <img src="https://pbs.twimg.com/media/BZl9-ECIQAAE09O.jpg">
+        </div>
+        <!-- Sidebar brand name -->
+        <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+            giuli@gmail.com
+            <b class="caret"></b>
+        </a>
+    </div>
+
+    <!-- Sidebar navigation -->
+    <ul class="nav sidebar-nav">
+        <!-- docs -->
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" href="#" data-toggle="dropdown">
+                Documentation
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                {% for item in collections.docs %}
+                <li>
+                    <a href="http://localhost:8080/docs/{{ item.fileSlug }}/index.html">
+                        <i class="sidebar-icon md-inbox"></i>
+                        {{ item.data.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="divider"></li>
+
+        {% set labelArr = ['atoms', 'molecules', 'organisms'] %}
+        <!-- atoms -->
+        {% for label in labelArr %}
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" href="#" data-toggle="dropdown">
+                {{ label }}
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                {% if label == 'atoms' %}
+                    {% set coll = collections.atomsiframes %}
+                {% elseif label == 'molecules' %}
+                    {% set coll = collections.moleculesiframes %}
+                {% else %}
+                    {% set coll = collections.organismsiframes %}
+                {% endif %}
+                {# {% set coll = collections{{ label }}frames %} #}
+                {% for item in coll %}
+                <li>
+                    <a href="http://localhost:8080/components/{{ item.data.componentName }}/{{ item.fileSlug }}/index.html">
+                        <i class="sidebar-icon md-inbox"></i>
+                        {{ item.data.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>

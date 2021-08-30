@@ -1,0 +1,96 @@
+/*
+
+mobilewide: 550px,
+tablet: 768px,
+desktop: 1024px,
+bigdesk: 1200px,
+wide: 1367px,
+fullhd:     1920px
+*/
+$l-default-width: 95%;
+$arr-l-mainwrap: 500, 600, 900, 1100; // 500/550, 600/768, 900/1024, 1200/1367
+$arr-l-singlewrap: 500, 600, 700;
+
+// main wrapper - example: header
+.l-mainWrapper {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+
+  @include mq(mobilewide) {
+    max-width: px(nth($arr-l-mainwrap,1));
+  }
+
+  @include mq(tablet) {
+    max-width: px(nth($arr-l-mainwrap,2));
+  }
+
+  @include mq(desktop) {
+    max-width: px(nth($arr-l-mainwrap,3));
+  }
+
+  @include mq(bigdesk) {
+    max-width: px(nth($arr-l-mainwrap,4));
+  }
+}
+
+// smaller wrapper - example: Related links (Articoli correlati)
+.l-singleWrapper {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+
+  @include mq(tablet) {
+    max-width: px(nth($arr-l-singlewrap,1));
+  }
+
+  @include mq(desktop) {
+    max-width: px(nth($arr-l-singlewrap,2));
+  }
+
+  @include mq(wide) {
+    max-width: px(nth($arr-l-singlewrap,3));
+  }
+
+  .l-mainWrapper & {
+    @include mq($until: tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.l-pageContent {
+
+  @include mq(desktop) {
+    display: grid;
+    // grid-gap: 5px;
+    grid-template-columns: 4fr 6fr;
+    grid-template-areas:
+      "b a"
+      "c c";
+  }
+}
+
+.l-pageContent__main {
+
+  @include mq(desktop) {
+    grid-area: a;
+  }
+}
+
+.l-pageContent__secondary {
+
+  @include mq(desktop) {
+    grid-area: c;
+  }
+}
+
+.l-pageContent__side {
+
+  @include mq(desktop) {
+    grid-area: b;
+    padding-right: 100px;
+  }
+}

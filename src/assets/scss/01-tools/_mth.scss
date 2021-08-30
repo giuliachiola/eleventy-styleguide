@@ -1,0 +1,58 @@
+/**
+ * maxTextHeight
+ *
+ * outputs styles to cap the height of a text box to n lines
+ * does not add ellipsis
+ *
+ * @param {String} $font   - either a shorthand (xs, s, m, l, xl, xxl), which are mapped to the environment variables $font-size-nn, or a unit based value
+ * @param {String} $lead   - either a shorthand (xs, s, m, l, xl, xxl), which are mapped to the environment variables $line-height-nn, or a number or unit based value
+ * @param {Number} $lines  - the number of lines of text to display before overflow
+ * @param {Boolean} $force - (optional) set to true to also force the height of the element to the text
+ */
+@mixin maxTextHeight($font: false, $lead: false, $lines: false, $force: false) {
+  // error handling
+  @if (not $lead) {
+    $lead: $font;
+  }
+
+  @if (not $font or not $lines) {
+    @warn "maxTextHeight(): bad parameters";
+  }
+
+  @else {
+    $font-sizes: (
+      "xs":   $font-size-xs,
+      "s":    $font-size-s,
+      "m":    $font-size-m,
+      "l":    $font-size-l,
+      "xl":   $font-size-xl,
+      "xxl":  $font-size-xxl
+    );
+
+    $line-heights: (
+      "xs":   $line-height-xs,
+      "s":    $line-height-s,
+      "m":    $line-height-m,
+      "l":    $line-height-l,
+      "xl":   $line-height-xl,
+      "xxl":  $line-height-xxl
+    );
+
+    @if (map-has-key($font-sizes, $font)) {
+      $font: map-get($font-sizes, $font);
+    }
+
+    @if (map-has-key($line-heights, $lead)) {
+      $lead: map-get($line-heights, $lead);
+    }
+
+    font-size: $font;
+    line-height: $lead;
+    max-height: $font * $lead * $lines + 0#{unit($lead)};
+    overflow: hidden;
+
+    @if ($force) {
+      height: $font * $lead * $lines + 0#{unit($lead)};
+    }
+  }
+}

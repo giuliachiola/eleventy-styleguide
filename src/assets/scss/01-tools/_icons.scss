@@ -1,0 +1,15 @@
+/*
+   #Icons
+   ========================================================================== */
+
+@mixin iconSize($size){
+  height: $size * 1px;
+  width: $size * 1px;
+}
+
+@mixin iconColor($color) {
+  svg {
+    fill: $color;
+    stroke: $color;
+  }
+}

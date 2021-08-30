@@ -1,0 +1,14 @@
+// mq configuration
+@import 'mq-config';
+@import 'node_modules/sass-mq/_mq.scss'; // use npm sass script
+
+// required for unit conversions
+@import 'px';
+
+// settings
+@import 'colors';
+@import 'font-families';
+@import 'typography';
+@import 'spacing';
+
+@import 'z-index';

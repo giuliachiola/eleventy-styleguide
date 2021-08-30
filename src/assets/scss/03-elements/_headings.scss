@@ -1,0 +1,93 @@
+$arr-t-h1:  px(25), px(30), px(40);
+$arr-t-h2:  px(25), px(30), px(30); //25,30,30
+$arr-t-h3:  px(20), px(25), px(25);
+$arr-t-h4:  px(20), px(20), px(20);
+$arr-t-h5:  px(15), px(15), px(15);
+
+/*
+ * Headings.default
+ */
+
+$c-headline: $color-solid-black;
+$c-subtitle: $color-fiord;
+$t-head-lineheight: $line-height-s;
+
+/*----------  Heading  ----------*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  line-height: $t-head-lineheight;
+}
+
+h1,
+.h1,
+%font-h1 {
+  @include sans-bold;
+  font-size: nth($arr-t-h1, 1);
+
+  @include mq(tablet) {
+    font-size: nth($arr-t-h1, 2);
+  }
+
+  @include mq(desktop) {
+    font-size: nth($arr-t-h1, 3);
+  }
+}
+
+// note: default h2 is bold
+h2,
+.h2,
+%font-h2 {
+  @include sans-bold;
+  font-size: nth($arr-t-h2, 1);
+
+  @include mq(desktop) {
+    font-size: nth($arr-t-h2, 2);
+  }
+}
+
+h3,
+.h3,
+%font-h3 {
+  @include sans-bold;
+  font-size: nth($arr-t-h3, 1);
+  margin-bottom: px(25);
+
+  @include mq(tablet) {
+    font-size: nth($arr-t-h3, 2);
+  }
+}
+
+h4,
+.h4,
+%font-h4 {
+  @include sans-bold;
+  font-size: nth($arr-t-h4, 1);
+}
+
+h5,
+.h5,
+%font-h5 {
+  @include sans-bold;
+  font-size: nth($arr-t-h5, 1);
+  // text-transform: uppercase;
+}
+
+/*----------  Generic headlines  ----------*/
+
+.pageHeadline {
+  @extend %font-h1;
+  color: $c-headline;
+  letter-spacing: -1px;
+}
+
+.pageSubtitle {
+  @include sans-regular;
+  margin-bottom: px(25);
+  color: $c-subtitle;
+  letter-spacing: -1px;
+}

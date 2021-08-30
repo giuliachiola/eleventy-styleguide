@@ -1,0 +1,7 @@
+{
+	"layout": "layout/component.njk",
+	"permalink": "components/button/{{ name | slug }}/",
+	"componentFile": "components/atoms/button/button.njk",
+	"group": "atoms",
+	"componentName": "button"
+}

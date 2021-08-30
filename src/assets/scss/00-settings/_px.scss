@@ -1,0 +1,26 @@
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+$base-font-size: 16px;
+
+// alias to mq-px2em from sass-mq; replace if sass-mq is removed
+@function px2em($px, $base-font-size: $mq-base-font-size) {
+  @return mq-px2em($px, $base-font-size);
+}
+
+@function px2rem($px) {
+  @return strip-unit(mq-px2em($px, $base-font-size)) + 0rem;
+}
+
+// shortcut for the preferred px-conversion function
+@function px($px) {
+  @return px2rem(strip-unit($px) * 1px);
+}

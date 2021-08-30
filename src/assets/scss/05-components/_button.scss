@@ -1,0 +1,102 @@
+// spacing
+$s-button-padding-default:       px(15) $space-l;
+$s-button-padding:               px(15) px(38);
+$s-button-radius:                px(22);
+$s-button-icon-margin:           $space-xxs;
+$s-button-icon-width:            px(16);
+
+// typography
+$t-button-font-size:             $font-size-s;
+$t-button-font-weight:           $font-weight-medium;
+$t-button-lineheight:            $line-height-xs;
+
+// color
+// -- default
+$c-button-label:                $color-white;
+$c-button-bg:                   lime;
+$c-button-border:               lime;
+// -- default hover
+$c-button-h-label:              lime;
+$c-button-h-bg:                 $color-white;
+$c-button-h-border:             $color-white;
+// -- disabled
+$c-button-disabled-label:       $color-white;
+$c-button-disabled-bg:          lime;
+$c-button-disabled-border:      lime;
+// -- outline
+$c-button-outlined-label:        lime;
+$c-button-outlined-bg:           $color-white;
+$c-button-outlined-border:       lime;
+// -- outline hover
+$c-button-outlined-h-label:      $color-white;
+$c-button-outlined-h-bg:         lime;
+$c-button-outlined-h-border:     lime;
+
+%c-button,
+.c-button {
+  display: inline-block;
+  padding: $s-button-padding-default;
+  font-size: $t-button-font-size;
+  font-weight: $t-button-font-weight;
+  line-height: $t-button-lineheight;
+  text-align: center;
+  text-decoration: none;
+  color: $c-button-label;
+  background-color: $c-button-bg;
+  border: px(2) solid $c-button-border;
+  border-radius: $s-button-radius;
+}
+
+.c-button {
+  min-width: px(150);
+  padding: $s-button-padding;
+  text-transform: uppercase;
+  pointer-events: auto;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $c-button-h-label;
+    background-color: $c-button-h-bg;
+    border-color: $c-button-h-border;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    color: $c-button-disabled-label;
+    background-color: $c-button-disabled-bg;
+    border-color: $c-button-disabled-bg;
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+}
+
+%c-button--outlined,
+.c-button--outlined {
+  color: $c-button-outlined-label;
+  background-color: $c-button-outlined-bg;
+  border-color: $c-button-outlined-border;
+
+  &:hover,
+  &:focus {
+    color: $c-button-outlined-h-label;
+    background-color: $c-button-outlined-h-bg;
+    border-color: $c-button-outlined-h-border;
+  }
+}
+
+// button with icon and span
+.c-button--icon {
+  display: inline-flex;
+  align-items: center;
+
+  // button with icon
+  > [class^='icon-'] {
+    width: $s-button-icon-width;
+    height: $s-button-icon-width;
+    margin-right: $s-button-icon-margin;
+  }
+}

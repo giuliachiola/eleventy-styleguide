@@ -1,0 +1,24 @@
+{
+  "name": "eleventy-styleguide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cleanup-public": "rm -rf public/components public/docs public/iframes",
+    "build-css": "node-sass src/assets/scss/style.scss public/assets/css/style.css",
+    "dev": "npm run cleanup-public && npm run build-css & eleventy --serve --watch",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy 2>&1 | tee log.txt"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
+    "normalize-scss": "^7.0.1",
+    "sass-mq": "^5.0.0"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

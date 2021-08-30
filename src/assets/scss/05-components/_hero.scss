@@ -1,0 +1,81 @@
+// colors
+$hero-color-1: $color-test-1;
+$hero-color-2: $color-test-2;
+$hero-color-3: $color-test-3;
+$hero-color-4: $color-test-4;
+
+
+.c-hero {
+  position: relative;
+  height: 95vh;
+  width: 100%;
+}
+
+.c-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+
+  &.has-gradient {
+    background: linear-gradient(-45deg, $hero-color-1, $hero-color-4);
+  }
+
+  &.has-animated-gradient { // https://www.gradient-animator.com/
+    background: linear-gradient(
+      -45deg,
+      $hero-color-1,
+      $hero-color-2,
+      $hero-color-3,
+      $hero-color-4
+      );
+    background-size: 800% 800%;
+    animation: changeGradient 22s ease infinite;
+  }
+
+  &.has-picture {
+    background-image: url("https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=350");
+  }
+}
+
+@keyframes changeGradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+// hero content
+
+.c-hero__content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+
+  @include mq(mobilewide) {
+    left: 10%;
+    width: 80%;
+  }
+
+  @include mq(tablet) {
+    left: 15%;
+    width: 70%;
+  }
+}

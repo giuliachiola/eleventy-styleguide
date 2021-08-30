@@ -1,0 +1,68 @@
+{% extends "layout/default.njk" %}
+
+{% block main %}
+  <p><strong>Content del markdown:</strong></p>
+  {{ content | safe }}
+  <hr>
+
+  <p><strong>Render:</strong></p>
+  {% include componentFile %}
+  <hr>
+
+  <p><strong>(iframe) Render HTML:</strong></p>
+  <iframe
+    src="../../../iframes/{{ slug }}.html"
+    scrolling="yes"
+    frameborder="1"
+    height="300"
+    width="300"
+    allowtransparency="true"
+    class="ef_embed_iframe language-html"
+    style="width: 100%; overflow: hidden;">
+  </iframe>
+
+  <p><strong>(iframe) Code HTML:</strong></p>
+  <iframe
+    srcdoc="../../../iframes/{{ slug }}.html"
+    scrolling="yes"
+    frameborder="1"
+    height="300"
+    width="300"
+    allowtransparency="true"
+    class="ef_embed_iframe language-html"
+    style="width: 100%; overflow: hidden;">
+  </iframe>
+
+  <p><strong>(iframe) Code SCSS:</strong></p>
+  <iframe
+    src="../../../assets/scss/05-components/_{{ componentName}}.scss"
+    scrolling="yes"
+    frameborder="1"
+    height="300"
+    width="300"
+    allowtransparency="true"
+    class="ef_embed_iframe language-css"
+    style="width: 100%; overflow: hidden;">
+  </iframe>
+
+  <!-- test -->
+  <h2>Code using raw html</h2>
+  {% highlight "html" %}
+  <div class="c-hero">
+    <h4>I'm a superhero</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <a href="#" class="c-hero__link">Link to awesome tutorial</a>
+  </div>
+  {%- endhighlight %}
+
+  <h2>Code using "language-css" prism class without iframe:</h2>
+  {% highlight "css" %}
+  .c-hero {
+    position: relative;
+    height: 95vh;
+    width: 100%;
+  }
+  {% endhighlight %}
+  <!-- end test -->
+
+{% endblock %}

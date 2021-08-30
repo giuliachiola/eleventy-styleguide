@@ -1,0 +1,11 @@
+// spacing
+$s-module-bottom:       $space-xxl;
+$s-module-half-bottom:  $space-m;
+
+.l-module {
+  margin-bottom: $s-module-bottom;
+}
+
+.l-module--half {
+  margin-bottom: $s-module-half-bottom;
+}

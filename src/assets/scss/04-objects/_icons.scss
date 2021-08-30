@@ -1,0 +1,50 @@
+$icon-size-xs:  10;
+$icon-size-s:   12;
+$icon-size-m:   16;
+$icon-size-l:   20;
+$icon-size-xl:  24;
+$icon-size-xxl: 30;
+
+$icon-margin-from-text: px(5);
+
+[class^='icon-'] {
+  width: px(48);
+  height: px(48);
+  vertical-align: middle;
+
+  // svg defaults
+  // Se le icone sono "vuote" con la stroke come nel caso feather icons
+  fill: none;
+  stroke: currentColor;
+}
+
+// modifier per icone "piene" es. Facebook e Twitter (Entypo+)
+[class^='icon-'].icon--filled {
+  fill: currentColor;
+  fill-rule: evenodd;
+  stroke: none;
+}
+
+.icon-xs {
+  @include iconSize($icon-size-xs);
+}
+
+.icon-s {
+  @include iconSize($icon-size-s);
+}
+
+.icon-m {
+  @include iconSize($icon-size-m);
+}
+
+.icon-l {
+  @include iconSize($icon-size-l);
+}
+
+.icon-xl {
+  @include iconSize($icon-size-xl);
+}
+
+.icon-xxl {
+  @include iconSize($icon-size-xxl);
+}

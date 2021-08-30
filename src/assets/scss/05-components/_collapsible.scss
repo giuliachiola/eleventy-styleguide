@@ -1,0 +1,24 @@
+.c-collapsible__check {
+  display: none;
+}
+
+.c-collapsible__label {
+  display: block;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.c-collapsible__content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+}
+
+.c-collapsible__check:checked + .c-collapsible__content {
+  max-height: 350px;
+}
+
+.c-collapsible__innerContent {
+  padding: .5rem 1rem;
+  border: 1px solid $color-black;
+}

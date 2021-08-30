@@ -1,0 +1,12 @@
+// ====================================================================
+// CropImg Crops image horizontally if it doesn't fit in container
+// ====================================================================
+
+// Usage:
+// @include cropimg-h;
+@mixin cropimg-h {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

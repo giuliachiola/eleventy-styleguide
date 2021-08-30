@@ -1,0 +1,35 @@
+// *------------------------------------*
+//    #BASE
+// *------------------------------------*
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+
+  #sg-viewport & { // dentro alla style guide elementi centrati, fuori dalla styleguide sono realistici
+    text-align: center;
+  }
+}
+
+img {
+  max-width: 100%;
+
+  a > & {
+    vertical-align: middle;
+  }
+}
+
+ul {
+  @include listreset;
+}

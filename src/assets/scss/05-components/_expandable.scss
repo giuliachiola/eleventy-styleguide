@@ -1,0 +1,80 @@
+$expandable-line-color:     $color-black;;
+$expandable-line-height:    px(1);
+$expandable-line-from-text: px(5);
+
+$expandable-height--small:    px(186);
+$expandable-height:           px(250);
+$expandable-overlay-gradient: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+$expandable-overlay-height:   px(100);
+
+
+.c-expandable__content {
+  overflow-y: hidden;
+  max-height: $expandable-height;
+
+  .c-expandable--short & {
+    max-height: $expandable-height--small;
+  }
+
+  .is-active & {
+    max-height: 999em;
+  }
+}
+
+.c-expandable__link {
+  @include sans-bold;
+  font-family: $font-sans;
+  font-size: $font-size-xs;
+  color: $color-text;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100vw; // Metterlo % non si può, metterlo in px?
+    background: $expandable-overlay-gradient;
+    height: $expandable-overlay-height;
+
+    .is-active & {
+      display: none;
+    }
+  }
+}
+
+.c-expandable__label {
+  display: flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: $expandable-line-height;
+    background-color: $expandable-line-color;
+  }
+
+  &::before {
+    margin-right: $expandable-line-from-text;
+  }
+
+  &::after {
+    margin-left: $expandable-line-from-text;
+  }
+}
+
+.c-expandable__label--open {
+  .is-active & {
+    display: none;
+  }
+}
+
+.c-expandable__label--close {
+  display: none;
+
+  .is-active & {
+    display: flex;
+  }
+}

@@ -1,0 +1,52 @@
+/*----------  Body  ----------*/
+
+* {
+  font-family: inherit;
+  line-height: inherit; // outline-color: $color-outline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-default;
+  font-size: $font-size-s;
+  line-height: $line-height-default;
+
+  @include mq(tablet) {
+    font-size: $font-size-default;
+  }
+}
+
+/*----------  Paragraphs  ----------*/
+
+p {
+  font-size: $font-size-s;
+
+  @include mq(tablet) {
+    font-size: $font-size-default;
+  }
+  .l-pageContent__side & {
+    @include mq(tablet) {
+      font-size: $font-size-s;
+    }
+  }
+}
+
+/*----------  Default text  ----------*/
+
+a {
+  color: $color-black;
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  @include serif-italic;
+}
+
+hr {
+  margin: 1rem 0;
+}

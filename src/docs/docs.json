@@ -1,0 +1,5 @@
+{
+	"layout": "layout/documentation.njk",
+	"permalink": "docs/{{ name | slug }}/",
+	"componentName": "docs"
+}

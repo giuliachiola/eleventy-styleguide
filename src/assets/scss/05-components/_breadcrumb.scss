@@ -1,0 +1,69 @@
+// colors
+$c-breadcrumb:             $color-test-1;
+$c-breadcrumb-hover:       $color-test-2;
+$c-breadcrumb-active:      $color-test-3;
+
+.c-breadcrumb {
+  @include listreset;
+  display: inline-block;
+}
+
+.c-breadcrumb__item {
+  float: left;
+}
+
+.c-breadrumb__link {
+  display: block;
+  background: $c-breadcrumb;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px; // same as height
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 0 solid $c-breadcrumb;
+    border-width: 20px 10px;
+    width: 0;
+    height: 0;
+  }
+
+  &:before {
+    left: -20px;
+    border-left-color: transparent;
+  }
+
+  &:after {
+    left: 100%;
+    border-color: transparent;
+    border-left-color: $c-breadcrumb;
+  }
+
+  &:hover {
+    background-color: $c-breadcrumb-hover;
+    &:before {
+      border-color: $c-breadcrumb-hover;
+      border-left-color: transparent;
+    }
+    &:after {
+      border-left-color: $c-breadcrumb-hover;
+    }
+  }
+
+  &:active {
+    background-color: $c-breadcrumb-active;
+    &:before {
+      border-color: $c-breadcrumb-active;
+      border-left-color: transparent;
+    }
+    &:after {
+      border-left-color: $c-breadcrumb-active;
+    }
+  }
+}

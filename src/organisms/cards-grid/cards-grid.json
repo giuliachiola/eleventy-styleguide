@@ -1,0 +1,6 @@
+{
+	"layout": "layout/component.njk",
+	"permalink": "components/cards-grid/{{ name | slug }}/",
+	"componentFile": "components/organisms/cards-grid/cards-grid.njk",
+	"componentName": "cards-grid"
+}

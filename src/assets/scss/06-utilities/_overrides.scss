@@ -1,0 +1,27 @@
+body.hiddenX { overflow-x: hidden; }
+
+.u-font-sans { font-family: $font-sans !important; }
+.u-font-serif { font-family: $font-serif !important; }
+
+.u-font-normal { font-weight: $font-weight-normal !important; }
+.u-font-medium { font-weight: $font-weight-medium !important; }
+.u-font-bold { font-weight: $font-weight-bold !important; }
+
+.u-align-left { text-align: left !important; }
+.u-align-right { text-align: right !important; }
+
+.u-text-xs { font-size: $font-size-xs !important; }
+.u-text-s { font-size: $font-size-s !important; }
+.u-text-m { font-size: $font-size-m !important; }
+.u-text-l { font-size: $font-size-l !important; }
+.u-text-xl { font-size: $font-size-xl !important; }
+.u-text-xxl { font-size: $font-size-xxl !important; }
+
+.u-hidden-m { @include mq($until: tablet) { display: none !important; } }
+.u-hidden-t { @include mq(tablet, desktop) { display: none !important; } }
+.u-hidden-d { @include mq(desktop, wide) { display: none !important; } }
+.u-hidden-w { @include mq(wide) { display: none !important; } }
+
+.u-hidden-l { @include mq($from: tablet) { display: none !important; } }
+
+.u-listreset { @include listreset;}

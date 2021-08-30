@@ -1,0 +1,34 @@
+// color
+$c-theme-black:           black; // default
+$c-theme-lime:            lime;
+
+// section text color
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  // color: $c-theme-black; // default
+
+  .t--lime & {
+    color: $c-theme-lime;
+  }
+}
+
+// section background color
+.t-bg--lime {
+  background-color: $c-theme-lime;
+}
+
+hr {
+  &.t--lime {
+    border-width: px(5);
+    border-style: solid;
+  }
+
+  &.t--lime {
+    border-color: $c-theme-lime;
+  }
+}

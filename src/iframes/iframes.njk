@@ -1,0 +1,10 @@
+---
+pagination:
+  data: collections.iframes
+  size: 1
+permalink: iframes/{{ pagination.items[0].fileSlug | slug }}.html
+---
+
+{%- for item in pagination.items %}
+  {% include item.data.componentFile %}
+{% endfor -%}

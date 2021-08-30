@@ -1,0 +1,64 @@
+// *------------------------------------*
+//    #COLORS
+// *------------------------------------*
+
+/*
+ * Colors.primary (do NOT use in the styles)
+  *   source: http://chir.ag/projects/name-that-color/
+ */
+
+$color-tree-poppy:        #F8981D; // orange
+$color-curious-blue:      #1896DE; // light blue
+$color-mystic:            #E1E8ED; // light-grey
+$color-loblolly:          #B3BEC7; // mid-grey
+$color-fiord:             #445566; // dark blue
+
+/*
+ * Colors.neutral (do NOT use in the styles)
+  *   source: http://chir.ag/projects/name-that-color/
+ */
+
+$color-white:             #FFFFFF;
+$color-gallery:           #EFEFEF;
+$color-silver-chalice:    #AAA;
+$color-silver-scorpion:   #5F5F5F;
+$color-black:             #2D2D2D;
+$color-solid-black:       #000000;
+
+// Test colors - Never delete them!
+$color-test-1:          MediumAquamarine;
+$color-test-2:          SpringGreen;
+$color-test-3:          GreenYellow;
+$color-test-4:          Lime;
+$color-test-5:          LimeGreen;
+
+/*
+ * Colors.rgba (do NOT use in the styles)
+ */
+
+$_color-white-10:          rgba(255, 255, 255, 0.1);
+$_color-white-20:          rgba(255, 255, 255, 0.2);
+$_color-white-30:          rgba(255, 255, 255, 0.3);
+$_color-white-40:          rgba(255, 255, 255, 0.4);
+$_color-white-50:          rgba(255, 255, 255, 0.5);
+$_color-white-60:          rgba(255, 255, 255, 0.6);
+$_color-white-70:          rgba(255, 255, 255, 0.7);
+$_color-white-80:          rgba(255, 255, 255, 0.8);
+$_color-white-90:          rgba(255, 255, 255, 0.9);
+
+$_color-black-10:          rgba(0, 0, 0, 0.1);
+$_color-black-20:          rgba(0, 0, 0, 0.2);
+$_color-black-30:          rgba(0, 0, 0, 0.3);
+$_color-black-40:          rgba(0, 0, 0, 0.4);
+$_color-black-50:          rgba(0, 0, 0, 0.5);
+$_color-black-60:          rgba(0, 0, 0, 0.6);
+$_color-black-70:          rgba(0, 0, 0, 0.7);
+$_color-black-80:          rgba(0, 0, 0, 0.8);
+$_color-black-90:          rgba(0, 0, 0, 0.9);
+
+/*
+ * Colors.aliases (use these in the styles)
+ */
+
+$color-text:            $color-black;
+$color-border:          $color-silver-chalice;

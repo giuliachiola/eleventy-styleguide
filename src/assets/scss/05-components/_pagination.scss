@@ -1,0 +1,34 @@
+// colors
+$c-pagination:        $color-test-1;
+$c-pagination-hover:  $color-test-2;
+$c-pagination-active: $color-test-3;
+
+
+.c-pagination {
+  @include listreset;
+  display: inline-block;
+
+  a {
+    float: left;
+    display: block;
+    text-decoration: none;
+    padding: 5px 12px;
+    border-color: $c-pagination;
+
+    &:hover {
+      background: $c-pagination-hover;
+      color: $c-pagination;
+    }
+
+    &.active,
+    &:active {
+      background: $c-pagination-active;
+      color: $c-pagination;
+    }
+  }
+}
+
+.c-pagination__item {
+  display: inline;
+  text-align: center;
+}

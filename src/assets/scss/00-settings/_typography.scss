@@ -1,0 +1,80 @@
+// *------------------------------------*
+//    #TYPOGRAPHY
+// *------------------------------------*
+
+/*
+ * Typography.typeface
+ */
+
+$font-sans:   "Montserrat", Arial, sans-serif;
+$font-serif:  "Lora", Georgia, sans-serif;
+
+/*
+ * Typography.sizes
+ */
+
+$font-size-xs:  px(11);
+$font-size-s:   px(16);
+$font-size-m:   px(20);
+$font-size-l:   px(25);
+$font-size-xl:  px(30);
+$font-size-xxl: px(40);
+
+/*
+ * Typography.weight and line height
+ */
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold:   700;
+
+$line-height-xxs: 1;
+$line-height-xs:  1.1;
+$line-height-s:   1.225;
+$line-height-m:   1.375;
+$line-height-l:   1.525;
+$line-height-xl:  1.675;
+$line-height-xxl: 1.825;
+
+/*
+ * Typography.defaults
+ */
+
+$font-family-default:   $font-sans;
+$font-size-default:     $font-size-s;
+$line-height-default:   $line-height-m;
+
+/*
+ * Utility mixins
+ */
+
+@mixin sans-bold {
+  font-family: $font-sans;
+  font-weight: $font-weight-bold;
+}
+
+@mixin sans-regular {
+  font-family: $font-sans;
+  font-weight: $font-weight-medium;
+}
+
+@mixin serif-bold {
+  font-family: $font-serif;
+  font-weight: $font-weight-bold;
+}
+
+@mixin serif-regular {
+  font-family: $font-serif;
+  font-weight: $font-weight-normal;
+}
+
+@mixin serif-italic {
+  font-family: $font-serif;
+  font-style: italic;
+}
+
+@mixin serif-italic-bold {
+  font-family: $font-serif;
+  font-weight: $font-weight-bold;
+  font-style: italic;
+}

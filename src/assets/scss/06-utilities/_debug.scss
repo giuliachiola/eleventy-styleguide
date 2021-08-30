@@ -1,0 +1,19 @@
+@mixin debug-borders($color) {
+  box-shadow: 0 0 1px 1px $color inset;
+}
+
+.debug-borders {
+  @include debug-borders(red);
+}
+
+.debug-borders-nested { // add borders to all its children
+  @include debug-borders(red);
+
+  * {
+    @include debug-borders(orange);
+  }
+}
+
+.debug-background {
+  background-color: lightgray;
+}

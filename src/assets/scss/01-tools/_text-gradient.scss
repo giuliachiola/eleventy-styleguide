@@ -1,0 +1,16 @@
+// ====================================================================
+// Text gradient - gradient to 30% black to the bottom of the element
+// ====================================================================
+
+// Usage:
+// @include text-gradient;
+@mixin text-gradient {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 42%, $_color-black-40 72%);
+  pointer-events: none;
+}
