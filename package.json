@@ -7,7 +7,7 @@
     "cleanup-dist": "rm -rf _site/components _site/docs _site/iframes",
     "build-css": "node-sass src/assets/scss/style.scss _site/assets/css/style.css",
     "dev": "npm run cleanup-dist && npm run build-css & eleventy --serve --watch",
-    "build": "npm run cleanup-dist && npm run build-css & eleventy",
+    "build": "npm run cleanup-dist && eleventy && npm run build-css",
     "debug": "DEBUG=Eleventy* eleventy 2>&1 | tee log.txt"
   },
   "author": "",
