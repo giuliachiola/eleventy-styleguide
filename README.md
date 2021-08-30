@@ -2,11 +2,11 @@
 
 Custom pattern library tool using 11ty static site generator.
 
-| \                | \    |
-|------------------|------|
-| Deploy status    | \    |
-| Deploy preview   | \    |
-| Project typology | Tool |
+| \                | \                                                                                                                                                                        |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Deploy status    | [![Netlify Status](https://api.netlify.com/api/v1/badges/4df8851d-b810-4572-806c-39109f68caed/deploy-status)](https://app.netlify.com/sites/eleventy-styleguide/deploys) |
+| Deploy preview   | https://eleventy-styleguide.netlify.app/                                                                                                                                 |
+| Project typology | Tool                                                                                                                                                                     |
 
 ![project preview 1](docs/project-preview-1.png)
 ![project preview 2](docs/project-preview-2.png)
