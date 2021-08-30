@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cleanup-public": "rm -rf public/components public/docs public/iframes",
-    "build-css": "node-sass src/assets/scss/style.scss public/assets/css/style.css",
-    "dev": "npm run cleanup-public && npm run build-css & eleventy --serve --watch",
-    "build": "eleventy",
+    "cleanup-dist": "rm -rf _site/components _site/docs _site/iframes",
+    "build-css": "node-sass src/assets/scss/style.scss _site/assets/css/style.css",
+    "dev": "npm run cleanup-dist && npm run build-css & eleventy --serve --watch",
+    "build": "npm run cleanup-dist && npm run build-css & eleventy",
     "debug": "DEBUG=Eleventy* eleventy 2>&1 | tee log.txt"
   },
   "author": "",
