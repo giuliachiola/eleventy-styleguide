@@ -3,21 +3,26 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 module.exports = (eleventyConfig) => {
 
   // Read file folders (atoms, molecules, organisms)
-  const { readdirSync, statSync } = require('fs')
-  const { join } = require('path')
+  const {
+    readdirSync,
+    statSync
+  } = require('fs')
+  const {
+    join
+  } = require('path')
   const dirs = p => readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
   const dirsArr = dirs('src/_includes/components') // [ 'atoms', 'molecules', 'organisms' ]
   const iframeArr = dirsArr.map(dir => `${dir}iframes`); // [ 'atomsiframes', 'moleculesiframes', 'organismsiframes' ]
 
   // Generate iframes collections (atoms, molecules, organisms)
   iframeArr.forEach((iframe, index) => {
-    eleventyConfig.addCollection(iframe, function(collection) {
+    eleventyConfig.addCollection(iframe, function (collection) {
       return collection.getFilteredByGlob(`src/${dirsArr[index]}/**/*.md`);
     })
   })
 
   // Generate iframes collections (all)
-  eleventyConfig.addCollection("iframes", function(collection) {
+  eleventyConfig.addCollection("iframes", function (collection) {
     let allC = [...collection.getFilteredByGlob(`src/atoms/**/*.md`)]
     allC = [...allC, ...collection.getFilteredByGlob(`src/molecules/**/*.md`)]
     allC = [...allC, ...collection.getFilteredByGlob(`src/organisms/**/*.md`)]
@@ -25,7 +30,7 @@ module.exports = (eleventyConfig) => {
   });
 
   // Documentation
-  eleventyConfig.addCollection("docs", function(collection) {
+  eleventyConfig.addCollection("docs", function (collection) {
     return collection.getFilteredByGlob("src/docs/**/*.md");
   });
 
@@ -39,13 +44,13 @@ module.exports = (eleventyConfig) => {
     markdownTemplateEngine: "njk",
 
     templateFormats: [
-			"md",
+      "md",
       "njk",
-		],
+    ],
 
     dir: {
       input: "src",
-      output: "public",
+      output: "_site",
       includes: "_includes",
     },
 
