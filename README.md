@@ -48,7 +48,6 @@ npm run build
 | Branch name     | Use                       |
 |:----------------|:--------------------------|
 | `main`          | production                |
-| `hotfix/5-temp` | NOT WORKING, check issues |
 
 Note that component showing HTML raw source code does not work properly:
 
