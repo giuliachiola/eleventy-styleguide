@@ -30,7 +30,7 @@
             <ul class="dropdown-menu">
                 {% for item in collections.docs %}
                 <li>
-                    <a href="http://localhost:8080/docs/{{ item.fileSlug }}/index.html">
+                    <a href="/docs/{{ item.fileSlug }}/index.html">
                         <i class="sidebar-icon md-inbox"></i>
                         {{ item.data.name }}
                     </a>
@@ -59,7 +59,7 @@
                 {# {% set coll = collections{{ label }}frames %} #}
                 {% for item in coll %}
                 <li>
-                    <a href="http://localhost:8080/components/{{ item.data.componentName }}/{{ item.fileSlug }}/index.html">
+                    <a href="/components/{{ item.data.componentName }}/{{ item.fileSlug }}/index.html">
                         <i class="sidebar-icon md-inbox"></i>
                         {{ item.data.name }}
                     </a>
